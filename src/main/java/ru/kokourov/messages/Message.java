@@ -12,4 +12,7 @@ public class Message {
     public static final String MSG_TASK2_RES = "Сумма цифр числа %d равна: %d";
     public static final String MSG_TASK2_HELLO = "Программа нахождения суммы цифр целого числа приветствует Вас.";
     public static final String MSG_TASK2_INPUT = "Введите целое число: ";
+    public static final String MSG_TASK3_HELLO = "Программа распределения чисел по группам с одинаковой суммой приветствует Вас.";
+    public static final String MSG_TASK3_IMPOSSIBLE = "Невозможно создать группы из данного набора чисел.";
+    public static final String MSG_TASK3_INPUT_AMOUNT_GROUPS = "Введите количество групп: ";
 }
