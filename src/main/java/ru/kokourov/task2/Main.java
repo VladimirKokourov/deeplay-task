@@ -1,7 +1,7 @@
 package ru.kokourov.task2;
 
 import ru.kokourov.messages.Message;
-
+//Программа нахождения суммы цифр целого числа
 public class Main {
     public static void main(String[] args) {
         InputNumber in = new InputNumber();

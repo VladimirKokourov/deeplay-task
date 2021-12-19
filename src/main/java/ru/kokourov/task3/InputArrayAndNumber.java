@@ -8,37 +8,37 @@ public class InputArrayAndNumber {
     private final int[] arr;
     private final int amountBucket;
 
-    public InputArrayAndNumber(int minSize) {
+    public InputArrayAndNumber() {
         Scanner in = new Scanner(System.in);
 
         System.out.println(Message.MSG_TASK3_HELLO);
-        System.out.println(Message.MSG_TASK1_INPUT_SIZE);
-
-        int size;
-        do {
-            System.out.printf(Message.MSG_TASK1_INPUT_SIZE_ERROR, minSize);
-            size = inputNumber(in);
-        } while (size < minSize);
-
+        System.out.print(Message.MSG_TASK1_INPUT_SIZE);
+        //ввод размера массива
+        int size = inputPosNumber(in);
         arr = new int[size];
-
+        //ввод массива
         System.out.printf(Message.MSG_TASK1_INPUT_ARRAY, size);
         for (int i = 0; i < arr.length; i++) {
-            System.out.printf(Message.MSG_TASK1_INPUT_ARRAY_BALANCE, size - i);
-            arr[i] = inputNumber(in);
+            arr[i] = inputPosNumber(in);
             System.out.printf(Message.MSG_TASK1_INPUT_ARRAY_ADD, arr[i]);
         }
-
-        System.out.println(Message.MSG_TASK3_INPUT_AMOUNT_GROUPS);
-        amountBucket = inputNumber(in);
+        //ввод количества групп
+        System.out.print(Message.MSG_TASK3_INPUT_AMOUNT_GROUPS);
+        amountBucket = inputPosNumber(in);
         in.close();
     }
-    private int inputNumber(Scanner in) {
-        while (!in.hasNextInt()) {
-            System.out.println(Message.MSG_INPUT_NUM_ERROR);
-            in.next();
-        }
-        return in.nextInt();
+    //метод ввода положительного числа
+    private int inputPosNumber(Scanner in) {
+        int temp;
+        do {
+            System.out.printf(Message.MSG_TASK3_INPUT_SIZE_ERROR);
+            while (!in.hasNextInt()) {
+                System.out.println(Message.MSG_INPUT_NUM_ERROR);
+                in.next();
+            }
+            temp = in.nextInt();
+        } while (temp <= 0);
+        return temp;
     }
 
     public int[] getArr() {

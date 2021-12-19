@@ -14,15 +14,14 @@ public class InputArray {
         this.minSize = minSize;
         System.out.println(Message.MSG_TASK1_HELLO);
         System.out.println(Message.MSG_TASK1_INPUT_SIZE);
-
+        //ввод размера массива
         int size;
         do {
             System.out.printf(Message.MSG_TASK1_INPUT_SIZE_ERROR, minSize);
             size = inputNumber(in);
         } while (size < minSize);
-
         arr = new int[size];
-
+        //ввод массива
         System.out.printf(Message.MSG_TASK1_INPUT_ARRAY, size);
         for (int i = 0; i < arr.length; i++) {
             System.out.printf(Message.MSG_TASK1_INPUT_ARRAY_BALANCE, size - i);
@@ -31,7 +30,7 @@ public class InputArray {
         }
         in.close();
     }
-
+    //ввод с проверкой на валидность
     private int inputNumber(Scanner in) {
         while (!in.hasNextInt()) {
             System.out.println(Message.MSG_INPUT_NUM_ERROR);

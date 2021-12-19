@@ -3,8 +3,9 @@ package ru.kokourov.task1;
 import ru.kokourov.messages.Message;
 
 import java.util.Arrays;
-
+//Программа нахождения трех наибольших элементов в массиве чисел.
 public class Main {
+    //количество чисел, которые ищем
     private static final int AMOUNT = 3;
 
     public static void main(String[] args) {

@@ -24,6 +24,6 @@ public class InputNumber {
             System.out.println(Message.MSG_INPUT_NUM_ERROR);
             in.next();
         }
-        return  in.nextInt();
+        return in.nextInt();
     }
 }
