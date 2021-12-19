@@ -8,7 +8,7 @@ public class Main {
     private static final int AMOUNT = 3;
 
     public static void main(String[] args) {
-        Input input = new Input(AMOUNT);
+        InputArray input = new InputArray(AMOUNT);
         GreatestNumbersFinder gnf = new GreatestNumbersFinder(input);
         System.out.printf(Message.MSG_TASK1_RES, AMOUNT);
         System.out.println(Arrays.toString(gnf.find()));

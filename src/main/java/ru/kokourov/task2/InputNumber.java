@@ -4,11 +4,11 @@ import ru.kokourov.messages.Message;
 
 import java.util.Scanner;
 
-public class Input2 {
+public class InputNumber {
 
     private final int number;
 
-    public Input2() {
+    public InputNumber() {
         Scanner in = new Scanner(System.in);
         System.out.println(Message.MSG_TASK2_HELLO);
         System.out.println(Message.MSG_TASK2_INPUT);

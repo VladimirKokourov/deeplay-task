@@ -4,12 +4,12 @@ import ru.kokourov.messages.Message;
 
 import java.util.Scanner;
 
-public class Input {
+public class InputArray {
 
     private final int[] arr;
     private final int minSize;
 
-    public Input(int minSize) {
+    public InputArray(int minSize) {
         Scanner in = new Scanner(System.in);
         this.minSize = minSize;
         System.out.println(Message.MSG_TASK1_HELLO);
