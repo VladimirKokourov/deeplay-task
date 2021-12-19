@@ -1,44 +1,43 @@
 package ru.kokourov.task1;
 
+import ru.kokourov.messages.Message;
+
 import java.util.Scanner;
 
 public class Input {
-    private static final String MSG_HELLO = "Программа вывода наибольших чисел массива приветствует Вас.";
-    private static final String MSG_INPUT_SIZE = "Введите размер массива.";
 
-    private int size;
-    private int[] arr;
-    private int minSize;
-    Scanner in;
+    private final int[] arr;
+    private final int minSize;
 
     public Input(int minSize) {
+        Scanner in = new Scanner(System.in);
         this.minSize = minSize;
-        in = new Scanner(System.in);
-        System.out.println(MSG_HELLO);
-        System.out.println(MSG_INPUT_SIZE);
+        System.out.println(Message.MSG_TASK1_HELLO);
+        System.out.println(Message.MSG_TASK1_INPUT_SIZE);
 
+        int size;
         do {
-            System.out.printf("Это должно быть число больше %d:\n", minSize);
+            System.out.printf(Message.MSG_TASK1_INPUT_SIZE_ERROR, minSize);
             size = inputNumber(in);
         } while (size < minSize);
 
         arr = new int[size];
 
-        System.out.printf("Отлично! Введите массив размерностью %d.\n", size);
+        System.out.printf(Message.MSG_TASK1_INPUT_ARRAY, size);
         for (int i = 0; i < arr.length; i++) {
-            System.out.printf("Осталось ввести %d элемент(а)(ов).\n", size - i);
+            System.out.printf(Message.MSG_TASK1_INPUT_ARRAY_BALANCE, size - i);
             arr[i] = inputNumber(in);
-            System.out.printf("Элемент \"%d\" добавлен.\n", arr[i]);
+            System.out.printf(Message.MSG_TASK1_INPUT_ARRAY_ADD, arr[i]);
         }
         in.close();
     }
 
     private int inputNumber(Scanner in) {
         while (!in.hasNextInt()) {
-            System.out.println("Это не целое число. Попробуйте еще раз.");
+            System.out.println(Message.MSG_INPUT_NUM_ERROR);
             in.next();
         }
-        return  in.nextInt();
+        return in.nextInt();
     }
 
     public int[] getArr() {

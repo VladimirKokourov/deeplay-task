@@ -12,7 +12,10 @@ public class GreatestNumbersFinder {
         this.minSize = minSize;
     }
 
-    public GreatestNumbersFinder(Input input) {
+    public GreatestNumbersFinder(Input input) throws NullPointerException {
+        if (input == null) {
+            throw new NullPointerException("Input is null");
+        }
         arr = input.getArr();
         minSize = input.getMinSize();
     }
