@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class GreatestNumbersFinder {
 
     private final int[] arr;
-    private int minSize;
+    private final int minSize;
     //constructor for test
     public GreatestNumbersFinder(int[] arr, int minSize) {
         this.arr = arr;
