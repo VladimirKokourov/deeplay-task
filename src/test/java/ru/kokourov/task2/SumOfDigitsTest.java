@@ -14,10 +14,10 @@ import java.util.Collection;
 public class SumOfDigitsTest {
     private static SumOfDigits sod = null;
 
-    private final int number;
+    private final String number;
     private final int result;
 
-    public SumOfDigitsTest(int number, int result) {
+    public SumOfDigitsTest(String number, int result) {
         this.number = number;
         this.result = result;
     }
@@ -25,10 +25,10 @@ public class SumOfDigitsTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                        {555, 15},
-                        {-555, 5},
-                        {0, 0},
-                        {1, 1}
+                        {"555", 15},
+                        {"-555", 5},
+                        {"001", 1},
+                        {"-001", 1}
                 }
         );
     }

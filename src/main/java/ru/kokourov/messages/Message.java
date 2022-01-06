@@ -9,7 +9,7 @@ public class Message {
     public static final String MSG_TASK1_INPUT_ARRAY_BALANCE = "Осталось ввести %d элемент(а)(ов).\n";
     public static final String MSG_TASK1_INPUT_ARRAY_ADD = "Элемент \"%d\" добавлен. ";
     public static final String MSG_INPUT_NUM_ERROR = "Это не целое число. Попробуйте еще раз.";
-    public static final String MSG_TASK2_RES = "Сумма цифр числа %d равна: %d";
+    public static final String MSG_TASK2_RES = "Сумма цифр числа %s равна: %d";
     public static final String MSG_TASK2_HELLO = "Программа нахождения суммы цифр целого числа приветствует Вас.";
     public static final String MSG_TASK2_INPUT = "Введите целое число: ";
     public static final String MSG_TASK3_HELLO = "Программа распределения чисел по группам с одинаковой суммой приветствует Вас.";

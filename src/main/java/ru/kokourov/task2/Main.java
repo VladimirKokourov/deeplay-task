@@ -6,6 +6,12 @@ public class Main {
     public static void main(String[] args) {
         InputNumber in = new InputNumber();
         SumOfDigits sod = new SumOfDigits();
-        System.out.printf(Message.MSG_TASK2_RES, in.getNumber(), sod.sumOfDigitsOfANumber(in.getNumber()));
+        try {
+            System.out.printf(Message.MSG_TASK2_RES, in.getNumber(), sod.sumOfDigitsOfANumber(in.getNumber()));
+        } catch (IllegalArgumentException ex) {
+            System.out.println(Message.MSG_INPUT_NUM_ERROR);
+        } catch (NullPointerException ex) {
+            ex.getMessage();
+        }
     }
 }

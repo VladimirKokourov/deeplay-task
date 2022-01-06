@@ -4,26 +4,42 @@ import java.util.Arrays;
 
 public class SumOfDigits {
 
-    public int sumOfDigitsOfANumber(int number) {
-        int[] arr;
-        if (number >= 0) {
-            String str = Integer.toString(number);
-            arr = strToArr(str);
+    public int sumOfDigitsOfANumber(String number) throws IllegalArgumentException, NullPointerException {
+        checkNull(number);
+        char[] arrChar = number.toCharArray();
+        int[] arrInt;
+        if (arrChar[0] == '-') {
+            arrChar[0] = '0';
+            arrInt = charToInt(arrChar);
+            return sumArr(arrInt) - 2 * arrInt[1];
         } else {
-            StringBuilder sb = new StringBuilder(Integer.toString(number));
-            sb.reverse();
-            sb.deleteCharAt(sb.length() - 1);
-            arr = strToArr(sb.toString());
-            arr[arr.length - 1] = arr[arr.length - 1] - 2 * arr[arr.length - 1];
+            arrInt = charToInt(arrChar);
+            return sumArr(arrInt);
         }
-        return sumArr(arr);
     }
 
     private int sumArr(int[] arr) {
         return Arrays.stream(arr).sum();
     }
 
-    private int[] strToArr(String str) {
-        return Arrays.stream(str.split("")).mapToInt(Integer::parseInt).toArray();
+    private int[] charToInt(char[] arrChar) throws IllegalArgumentException {
+        int[] arrInt = new int[arrChar.length];
+        for(int i = 0; i < arrChar.length; i++) {
+            checkDigits(arrChar[i]);
+            arrInt[i] = arrChar[i] - 48;
+        }
+        return arrInt;
+    }
+
+    private void checkDigits(char ch) throws IllegalArgumentException {
+        if (ch < 48 || ch > 57) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void checkNull(String number) throws NullPointerException {
+        if (number == null) {
+            throw new NullPointerException();
+        }
     }
 }
